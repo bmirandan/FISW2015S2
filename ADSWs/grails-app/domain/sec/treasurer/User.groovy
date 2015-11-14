@@ -14,9 +14,15 @@ class User {
 
     static transients = ["confirmPassword"]
 
+    static hasMany = [documents: Document,
+                      publicationss: Publications,
+                      thesiss: Thesis,
+                      invesigation_reas: sec.treasurer.Investigation_Area,
+                      conventions:sec.treasurer.Convention,
+                      user_notifications: sec.treasurer.User_Notification,
+                      projects: sec.treasurer.Project]
 
-    static hasMany =[contacts: Contact]
-
+    static belongsTo = Role
     static constraints = {
         userName (nullable:false, unique: true)
         firstName (nullalbe: false)

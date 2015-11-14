@@ -59,18 +59,6 @@
 
             </tr>
 
-            <tr class="prop">
-                <td valign="top" class="name">Contacts:</td>
-
-                <td  valign="top" style="text-align:left;" class="value">
-                    <ul>
-                        <g:each var="c" in="${userInstance.contacts}">
-                            <li><g:link controller="contact" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
-                        </g:each>
-                    </ul>
-                </td>
-
-            </tr>
 
             <tr class="prop">
                 <td valign="top" class="name">Password:</td>

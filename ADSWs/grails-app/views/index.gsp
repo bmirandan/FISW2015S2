@@ -88,6 +88,8 @@
 				<ul>
 					<a href="/ADSW/user/login">Sign in</a>
 					<a href="/ADSW/user/create">Sign up</a>
+
+					<a href="/ADSW/role/create">Create rol (Crea un rol antes de registrar)</a>
 				</ul>
 			</div>
 		</div>

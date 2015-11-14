@@ -74,7 +74,14 @@
                     </td>
                 </tr>
 
-
+                <tr class="prop">
+                    <td valign="top" class="name">
+                        <label for="role">Role:</label>
+                    </td>
+                    <td valign="top" class="value ${hasErrors(bean:userInstance,field:'role','errors')}">
+                        <g:select optionKey="id" from="${Role.list()}" name="role.id" value="${userInstance?.role?.id}" ></g:select>
+                    </td>
+                </tr>
 
                 <tr class="prop">
                     <td valign="top" class="name">
