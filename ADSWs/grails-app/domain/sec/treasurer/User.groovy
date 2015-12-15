@@ -8,7 +8,7 @@ class User {
     Role role
     String password
     String confirmPassword
-
+    boolean enabled
     byte[] avatar
     String avatarType
 
@@ -30,7 +30,7 @@ class User {
         description ()
         avatar(nullable:true, maxSize: 16384 /* 16K */)
         avatarType(nullable:true)
-
+        enabled(nullable: false)
 
     }
 

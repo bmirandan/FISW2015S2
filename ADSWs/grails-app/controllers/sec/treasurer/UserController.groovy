@@ -53,9 +53,15 @@ class UserController {
     def handleLogin = {
         def user = checkUP(params)
         if (!user) {
-            flash.message = "sec.treasurer.User not found!"
+            flash.message = "User not found!"
             redirect (controller: 'user', action: 'login')
         }
+
+        if(user.role.isAdmin == true){
+            session.user = user
+            redirect(controller: 'homepage',action: 'dashboard')
+        }
+
         else {
             session.user = user
             redirect (controller:'homepage', action:'home')
@@ -133,6 +139,7 @@ class UserController {
         if (user.role.isAdmin == true) {
             redirect(action:'show',id:params.id)
         }
+
         else {
             redirect(controller: 'homepage', action: 'home')
         }
@@ -235,6 +242,7 @@ class UserController {
             redirect (controller: 'user', action: 'login')
         }
         else {
+            user.enabled = false
             user.firstName=params.firstName
             user.lastName=params.lastName
             user.description=params.description

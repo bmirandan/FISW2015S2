@@ -34,7 +34,7 @@
     <br />
     <div class="buttons">
         <span class="button">
-           
+
             <g:actionSubmit class ="login" value="Sign in!" action="handleLogin"/>
         </span>
     </div>

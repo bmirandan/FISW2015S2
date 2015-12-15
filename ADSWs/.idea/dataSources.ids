@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="adsw dev" uuid="16cc89ea-eb51-4f8e-ac8a-62f1876c7afb">
+    <database-info product="MySQL" version="5.7.9-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.37 ( Revision: 09940f05b4c98150f352e787a2549f11a2e9da93 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="sec_treasurer"/>
+    <table name="category" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_jkd66ywy4wiu3ggfx6bjxa0p8" table="category_document" schema="" catalog="sec_treasurer" columns="category_documents_id"/>
+    </table>
+    <table name="category_document" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="category_documents_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="document_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <foreign-key name="FK_9eurpmbdn0dyvb7cxj1ef66rv" columns="document_id" ref-table="document" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_jkd66ywy4wiu3ggfx6bjxa0p8" columns="category_documents_id" ref-table="category" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_9eurpmbdn0dyvb7cxj1ef66rv" unique="false" columns="document_id"/>
+      <index name="FK_jkd66ywy4wiu3ggfx6bjxa0p8" unique="false" columns="category_documents_id"/>
+    </table>
+    <table name="convention" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_eo39bovj4swdkiltica6lckcd" table="user_conventions" schema="" catalog="sec_treasurer" columns="convention_id"/>
+    </table>
+    <table name="document" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="titulo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_9eurpmbdn0dyvb7cxj1ef66rv" table="category_document" schema="" catalog="sec_treasurer" columns="document_id"/>
+      <exported-key name="FK_btpgfu8g0hkxn8de21jrbiten" table="user_document" schema="" catalog="sec_treasurer" columns="document_id"/>
+    </table>
+    <table name="investigation_area" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_l53x6rbghjp2yqj9u5c5oi7xd" table="user_invesigation_reas" schema="" catalog="sec_treasurer" columns="investigation_area_id"/>
+    </table>
+    <table name="project" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_1ytmg44m35ff160cofosaum8h" table="user_projects" schema="" catalog="sec_treasurer" columns="project_id"/>
+    </table>
+    <table name="publications" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_k0h90tbcv69klmp5nt3534m9b" table="user_publications" schema="" catalog="sec_treasurer" columns="publications_id"/>
+    </table>
+    <table name="role" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_admin" sqlType="BIT" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_qleu8ddawkdltal07p8e6hgva" table="user" schema="" catalog="sec_treasurer" columns="role_id"/>
+      <index name="UK_8sewwnpamngi6b1dwaa88askk" unique="true" columns="name"/>
+    </table>
+    <table name="thesis" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_iq436uc3awli7oic41k0dr5vr" table="user_thesis" schema="" catalog="sec_treasurer" columns="thesis_id"/>
+    </table>
+    <table name="user" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="avatar" sqlType="BLOB" precision="65535" scale="0" nullable="true" jdbcType="-4"/>
+      <column name="avatar_type" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="role_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="user_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="enabled" sqlType="BIT" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_qleu8ddawkdltal07p8e6hgva" columns="role_id" ref-table="role" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_59gk7tut0f2beeef3uehldteq" table="user_conventions" schema="" catalog="sec_treasurer" columns="user_id"/>
+      <exported-key name="FK_1mfo2isuh8qm92t51yol20yfx" table="user_document" schema="" catalog="sec_treasurer" columns="user_documents_id"/>
+      <exported-key name="FK_f31p1bbjsoqxmvud9xavqruaj" table="user_invesigation_reas" schema="" catalog="sec_treasurer" columns="user_id"/>
+      <exported-key name="FK_8xi9c7nbxov8bdubwdcgahnjp" table="user_projects" schema="" catalog="sec_treasurer" columns="user_id"/>
+      <exported-key name="FK_isiadks8k0bg9ooerw6veg27d" table="user_publications" schema="" catalog="sec_treasurer" columns="user_publicationss_id"/>
+      <exported-key name="FK_eg5sel085q7py9fdve85rg0kv" table="user_thesis" schema="" catalog="sec_treasurer" columns="user_thesiss_id"/>
+      <exported-key name="FK_ht4n68oap3we89up1s1rtor12" table="user_user_notifications" schema="" catalog="sec_treasurer" columns="user_id"/>
+      <index name="UK_lqjrcobrh9jc8wpcar64q1bfh" unique="true" columns="user_name"/>
+      <index name="FK_qleu8ddawkdltal07p8e6hgva" unique="false" columns="role_id"/>
+    </table>
+    <table name="user_conventions" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="convention_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="user_id,convention_id"/>
+      <foreign-key name="FK_59gk7tut0f2beeef3uehldteq" columns="user_id" ref-table="user" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_eo39bovj4swdkiltica6lckcd" columns="convention_id" ref-table="convention" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_eo39bovj4swdkiltica6lckcd" unique="false" columns="convention_id"/>
+    </table>
+    <table name="user_document" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="user_documents_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="document_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <foreign-key name="FK_1mfo2isuh8qm92t51yol20yfx" columns="user_documents_id" ref-table="user" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_btpgfu8g0hkxn8de21jrbiten" columns="document_id" ref-table="document" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_1mfo2isuh8qm92t51yol20yfx" unique="false" columns="user_documents_id"/>
+      <index name="FK_btpgfu8g0hkxn8de21jrbiten" unique="false" columns="document_id"/>
+    </table>
+    <table name="user_invesigation_reas" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="investigation_area_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="user_id,investigation_area_id"/>
+      <foreign-key name="FK_f31p1bbjsoqxmvud9xavqruaj" columns="user_id" ref-table="user" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_l53x6rbghjp2yqj9u5c5oi7xd" columns="investigation_area_id" ref-table="investigation_area" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_l53x6rbghjp2yqj9u5c5oi7xd" unique="false" columns="investigation_area_id"/>
+    </table>
+    <table name="user_notification" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_c7b4xajpfilnawxft1iehmesq" table="user_user_notifications" schema="" catalog="sec_treasurer" columns="user_notification_id"/>
+    </table>
+    <table name="user_projects" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="project_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="user_id,project_id"/>
+      <foreign-key name="FK_1ytmg44m35ff160cofosaum8h" columns="project_id" ref-table="project" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_8xi9c7nbxov8bdubwdcgahnjp" columns="user_id" ref-table="user" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_1ytmg44m35ff160cofosaum8h" unique="false" columns="project_id"/>
+    </table>
+    <table name="user_publications" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="user_publicationss_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="publications_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <foreign-key name="FK_isiadks8k0bg9ooerw6veg27d" columns="user_publicationss_id" ref-table="user" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_k0h90tbcv69klmp5nt3534m9b" columns="publications_id" ref-table="publications" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_isiadks8k0bg9ooerw6veg27d" unique="false" columns="user_publicationss_id"/>
+      <index name="FK_k0h90tbcv69klmp5nt3534m9b" unique="false" columns="publications_id"/>
+    </table>
+    <table name="user_thesis" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="user_thesiss_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="thesis_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <foreign-key name="FK_eg5sel085q7py9fdve85rg0kv" columns="user_thesiss_id" ref-table="user" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_iq436uc3awli7oic41k0dr5vr" columns="thesis_id" ref-table="thesis" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_eg5sel085q7py9fdve85rg0kv" unique="false" columns="user_thesiss_id"/>
+      <index name="FK_iq436uc3awli7oic41k0dr5vr" unique="false" columns="thesis_id"/>
+    </table>
+    <table name="user_user_notifications" schema="" catalog="sec_treasurer" type="TABLE">
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="user_notification_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="user_id,user_notification_id"/>
+      <foreign-key name="FK_c7b4xajpfilnawxft1iehmesq" columns="user_notification_id" ref-table="user_notification" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_ht4n68oap3we89up1s1rtor12" columns="user_id" ref-table="user" ref-schema="" ref-catalog="sec_treasurer" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_c7b4xajpfilnawxft1iehmesq" unique="false" columns="user_notification_id"/>
+    </table>
+  </data-source>
+</component>

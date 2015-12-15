@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="adsw dev" uuid="16cc89ea-eb51-4f8e-ac8a-62f1876c7afb">
+      <user-name>root</user-name>
+      <user-password>df9bdf8bdf98dfe8df99dfcfdf84df9e</user-password>
+      <schema-pattern>sec_treasurer.*</schema-pattern>
+      <default-schemas>sec_treasurer.*</default-schemas>
+    </data-source>
+  </component>
+</project>
