@@ -13,5 +13,38 @@
 
 <body>
 <a href="/ADSW/role/create">Create rol  </a>
+<h3>Usuarios activar </h3>
+
+
+<table>
+    <tbody><tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>User</th>
+        <th>Autorizar</th>
+    </tr>
+    <g:each in="${userList}" var="p">
+        <tr>
+         <td>${p.firstName}</td>
+        <td>${p.lastName}</td>
+        <td>${p.userName}</td>
+        <td> <g:form  >
+            <input type="hidden" value = "${p.userName}" name = "userName" >
+            <g:actionSubmit  value = "Autorizar" action="setEnable"/>
+        </g:form></td>
+
+    </g:each>
+
+
+
+    </tr>
+
+    </tbody></table>
+
+
+
+
+
+
 </body>
 </html>

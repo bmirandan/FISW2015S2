@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/adsw.iml" filepath="$PROJECT_DIR$/adsw.iml" />
-      <module fileurl="file://$PROJECT_DIR$/adsw-grailsPlugins.iml" filepath="$PROJECT_DIR$/adsw-grailsPlugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ADSWs.iml" filepath="$PROJECT_DIR$/ADSWs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ADSWs-grailsPlugins.iml" filepath="$PROJECT_DIR$/ADSWs-grailsPlugins.iml" />
     </modules>
   </component>
 </project>

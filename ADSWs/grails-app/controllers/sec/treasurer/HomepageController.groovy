@@ -25,5 +25,25 @@ class HomepageController {
             redirect(controller: 'homepage',action: 'home')
         }
 
+       List<User> unableUsers = User.findAllByEnabled(false)
+
+        [userList:unableUsers]
     }
+
+    def setEnable(String userName){
+
+        User user=User.findByUserName(userName)
+        // se hace a la forma de grails una query
+        // UPDATE `sec_treasurer`.`user` SET `enabled`=True WHERE `id`='4';
+        User.executeUpdate("update User U set U.enabled=:valu " +
+                "where U.id=:id",
+                [valu: true, id: user.id])
+
+
+
+
+       redirect(controller: 'homepage',action: 'dashboard')
+    }
+
+
 }

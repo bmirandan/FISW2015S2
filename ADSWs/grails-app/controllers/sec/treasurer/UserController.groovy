@@ -227,7 +227,7 @@ class UserController {
     def save = {
         def userInstance = new User(params)
         if(!userInstance.hasErrors() && userInstance.save()) {
-            flash.message = "sec.treasurer.User ${userInstance.id} registered"
+            flash.message = "User ${userInstance.id} registered"
             redirect(action:show,id:userInstance.id)
         }
         else {

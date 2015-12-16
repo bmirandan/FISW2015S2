@@ -6,6 +6,7 @@ class User {
     String lastName
     String description
     Role role
+    String email
     String password
     String confirmPassword
     boolean enabled
@@ -27,6 +28,7 @@ class User {
         userName (nullable:false, unique: true)
         firstName (nullalbe: false)
         lastName  (nullalbe: false)
+        email(nullable: false)
         description ()
         avatar(nullable:true, maxSize: 16384 /* 16K */)
         avatarType(nullable:true)
@@ -37,4 +39,7 @@ class User {
     String toString () {
         "$firstName $lastName"
     }
+
+
+
 }
