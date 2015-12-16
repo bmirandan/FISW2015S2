@@ -254,5 +254,10 @@ class UserController {
     def editprofile = {
 
     }
+    def profile = {
+        def user = session.user
+        [usuario: user]
+
+    }
     def scaffold = User
 }

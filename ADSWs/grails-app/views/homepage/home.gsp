@@ -27,20 +27,11 @@
 
         <br />
 
-        <g:if test ="${session.user?.role.isAdmin}">
-            <g:render template="/common/admin" />
-        </g:if>
-    </div>
-
-    <div style="float:right; width:20%; text-align:right;">
-        <g:if test="${session.user.avatar}">
-            <img class="avatar" src="${createLink(controller:'user', action:'avatar_image', id:session.user.id)}" />
-        </g:if>
-    </div>
 
 
+<a href="/ADSW/user/profile" class="button"> Perfil </a>
 
-
+</div>
 </div>
 </body>
 </html>
