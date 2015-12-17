@@ -25,7 +25,18 @@
 	body {
 		line-height: 1;
 	}
+.boxo{
+	height: 350px;
+	/*IMPORTANTE*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.boxo1 {
+
+	width: 420px;
+}
 	ol, ul {
 		list-style: none;
 	}
@@ -63,17 +74,17 @@
 		margin-right: auto;
 	}
 
-	.container.\31 25\25 {
+	.container.\3125\25 {
 		width: 100%;
 		max-width: 1750px;
 		min-width: 1400px;
 	}
 
-	.container.\37 5\25 {
+	.container.\375\25 {
 		width: 1050px;
 	}
 
-	.container.\35 0\25 {
+	.container.\350\25 {
 		width: 700px;
 	}
 
@@ -87,21 +98,21 @@
 
 	@media screen and (min-width: 961px) and (max-width: 1880px) {
 
-		.container.\31 25\25 {
+		.container.\3125\25 {
 			width: 100%;
 			max-width: 1500px;
 			min-width: 1200px;
 		}
 
-		.container.\37 5\25 {
+		.container.\375\25 {
 			width: 900px;
 		}
 
-		.container.\35 0\25 {
+		.container.\350\25 {
 			width: 600px;
 		}
 
-		.container.\32 5\25 {
+		.container.\325\25 {
 			width: 300px;
 		}
 
@@ -113,13 +124,13 @@
 
 	@media screen and (min-width: 961px) and (max-width: 1620px) {
 
-		.container.\31 25\25 {
+		.container.\3125\25 {
 			width: 100%;
 			max-width: 1200px;
 			min-width: 960px;
 		}
 
-		.container.\37 5\25 {
+		.container.\375\25 {
 			width: 720px;
 		}
 
@@ -139,7 +150,7 @@
 
 	@media screen and (min-width: 961px) and (max-width: 1320px) {
 
-		.container.\31 25\25 {
+		.container.\3125\25 {
 			width: 100%;
 			max-width: 125%;
 			min-width: 100%;
@@ -149,11 +160,11 @@
 			width: 75%;
 		}
 
-		.container.\35 0\25 {
+		.container.\350\25 {
 			width: 50%;
 		}
 
-		.container.\32 5\25 {
+		.container.\325\25 {
 			width: 25%;
 		}
 
@@ -326,7 +337,7 @@
 		margin: -20px 0 -1px -20px;
 	}
 
-	.row.\32 5\25 > * {
+	.row.\325\25 > * {
 		padding: 10px 0 0 10px;
 	}
 
@@ -1903,7 +1914,7 @@
 		color: #fff !important;
 		text-decoration: none;
 		padding: 0.75em 2.5em 0.75em 2.5em;
-		background-color: #8ebebc;
+		background-color: rgba(253, 0, 45, 0.56);
 		border: 0;
 		cursor: pointer;
 		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("images/overlay.png");

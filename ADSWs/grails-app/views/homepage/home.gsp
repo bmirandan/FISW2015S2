@@ -21,6 +21,7 @@
         response.sendRedirect(link);
     %>
 </g:if>
+<div class="boxo" >
 <div class="body;">
     <div style="float:left; width:80%;">
         <h1>Hi ${session.user} !</h1>
@@ -31,6 +32,7 @@
 
 <a href="/ADSW/user/profile" class="button"> Perfil </a>
 
+</div>
 </div>
 </div>
 </body>

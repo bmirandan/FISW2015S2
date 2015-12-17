@@ -1,7 +1,7 @@
 package sec.treasurer
 
 class Thesis {
-    static belongsTo= User
+    static belongsTo = User
     /*campos a definir*
 
      */

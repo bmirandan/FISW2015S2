@@ -1,11 +1,19 @@
 package sec.treasurer
 
 class Investigation_Area {
-    static hasMany = [users: User]
-    static belongsTo = [User]
-    /*
-       atributos por definir
+
+    String name
+
+       /*
+
 */
     static constraints = {
+
+    name {nullable: true}
+        }
+
+    @Override
+    String toString() {
+        name
     }
 }

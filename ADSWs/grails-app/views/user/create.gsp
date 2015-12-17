@@ -15,7 +15,7 @@
 <body>
 <g:render template="/user/template/navigation" />
 <div class="body">
-    <h1>Create User</h1>
+    <h1>Registar Usuario</h1>
     <g:if test="${flash.message}">
         <div class="message">${flash.message}</div>
     </g:if>
@@ -79,12 +79,10 @@
                         <label for="role" >Role:</label>
                     </td>
                     <td valign="top" class="value ${hasErrors(bean:userInstance,field:'role','errors')}">
-                        <select name="role.id" id="role.id">
-                            <option value="2">UsuarioTest</option>
-
-                        </select>
+                        <g:select optionKey="id" from="${Role.list()}" name="role.id" value="${userInstance?.role?.id}" ></g:select>
                     </td>
                 </tr>
+
 
                 <tr class="prop">
                     <td valign="top" class="name">

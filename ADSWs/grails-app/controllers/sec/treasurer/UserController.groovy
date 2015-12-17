@@ -256,8 +256,55 @@ class UserController {
     }
     def profile = {
         def user = session.user
-        [usuario: user]
+
+       def Rolesg=  Role.getAll(3,4,5,6,7,8)
+
+
+        def Areas =  Investigation_Area.getAll()
+        [roles: Rolesg, areas: Areas]
+    }
+
+    def updateName={
+        def usuario = session.user
+
+        User.executeUpdate("update User U set U.firstName =:nombre " +
+                "where U.id=:id",[nombre: params.userName,id: usuario.id])
+        User.executeUpdate("update User U set U.lastName =:apellido " +
+                "where U.id=:id",[apellido: params.userLast,id: usuario.id])
+        redirect(controller: 'user',action: 'profile')
+    }
+    def updateArea ={
+        def usuario= session.user
+        int value = params.harea.toInteger()
+        long cvalue = Long.valueOf(value)
+        User.executeUpdate("update User U set U.area.id =:valu " +
+                "where U.id=:id",
+                [valu: cvalue  , id: usuario.id])
+
+        redirect(controller: 'user',action: 'profile')
+
+
+       /* INSERT INTO `sec_treasurer`.`user_invesigation_reas`
+        (`investigation_area_id`, `user_id`) VALUES ('2', '4');
+        */
 
     }
+    def setPublic={
+
+    }
+
+    def updateRol={
+        def usuario = session.user
+        int value = params.role.toInteger()
+        long cvalue = Long.valueOf(value)
+        User.executeUpdate("update User U set U.role.id =:valu " +
+                "where U.id=:id",
+                [valu: cvalue  , id: usuario.id])
+
+        redirect(controller: 'user',action: 'profile')
+    }
+
+
+
     def scaffold = User
 }

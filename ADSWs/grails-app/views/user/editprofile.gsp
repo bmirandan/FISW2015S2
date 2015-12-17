@@ -114,7 +114,7 @@
             <g:form action="upload_avatar" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="${user.id}" />
                 <input type="hidden" name="version" value="${user.version}" />
-                <label for="avatar">Avatar (16K)</label>
+                <label for="avatar">Avatar (56K)</label>
                 <input type="file" name="avatar" id="avatar" />
                 <div style="font-size:0.8em; margin: 1.0em;">
                     For best results, your avatar should have a width-to-height ratio of 4:5. <br />

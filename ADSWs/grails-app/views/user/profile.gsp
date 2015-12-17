@@ -8,13 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE HTML>
 <!--
-	Prologue by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
 -->
 <html>
 <head>
-    <title>Prologue by HTML5 UP</title>
+    <title>Perfil Usuario</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -36,30 +34,19 @@
         <div id="logo">
             <span class="image avatar48"><img src= "${resource(dir: 'images', file: 'avatar.jpg')}" /></span>
             <h1 id="title">${session.user } </h1>
-            <p>Hyperspace Engineer</p>
+            <p> ${session.user.role.name}</p>
         </div>
 
         <!-- Nav -->
         <nav id="nav">
-            <!--
 
-								Prologue's nav expects links in one of two formats:
-
-								1. Hash link (scrolls to a different section within the page)
-
-								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-
-								2. Standard link (sends the user to another page/site)
-
-								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-
-							-->
             <ul>
-                <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-                <li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
+                <li><a href="#editProfile" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Editar perfil</span></a></li>
                 <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-                <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+                <li><a href="#NOobligatorio" id="adcional" class="skel-layers-ignoreHref"><span class="icon fa-user">Información adicional</span></a></li>
+
             </ul>
+
         </nav>
 
     </div>
@@ -87,101 +74,130 @@
         <div class="container">
 
             <header>
-                <h2 class="alt">Hi! I'm <strong>Prologue</strong>, a <a href="http://html5up.net/license">free</a> responsive<br />
-                    site template designed by <a href="http://html5up.net">HTML5 UP</a>.</h2>
-                <p>Ligula scelerisque justo sem accumsan diam quis<br />
-                    vitae natoque dictum sollicitudin elementum.</p>
+                <h2 class="alt">Bienvenido! a <strong>Labmmba</strong>, aquí puede  <strong>visualizar</strong> tu perfil, <strong>editar</strong> información.
+            y <strong>subir</strong> documentos </h2>
             </header>
 
-            <footer>
-                <a href="#portfolio" class="button scrolly">Magna Aliquam</a>
-            </footer>
+
 
         </div>
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="two">
-        <div class="container">
-
-            <header>
-                <h2>Portfolio</h2>
-            </header>
-
-            <p>Vitae natoque dictum etiam semper magnis enim feugiat convallis convallis
-            egestas rhoncus ridiculus in quis risus amet curabitur tempor orci penatibus.
-            Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis
-            fusce hendrerit lacus ridiculus.</p>
-
-            <div class="row">
-                <div class="4u 12u$(mobile)">
-                    <article class="item">
-                        <a href="#" class="image fit"><img src= "${resource(dir: 'images', file: 'pic02.jpg')}" alt="" /></a>
-                        <header>
-                            <h3>Ipsum Feugiat</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="#" class="image fit"><img src="${resource(dir: 'images', file: 'pic03.jpg')}" alt="" /></a>
-                        <header>
-                            <h3>Rhoncus Semper</h3>
-                        </header>
-                    </article>
-                </div>
-                <div class="4u 12u$(mobile)">
-                    <article class="item">
-                        <a href="#" class="image fit"><img src="${resource(dir: 'images', file: 'pic04.jpg')}" alt="" /></a>
-                        <header>
-                            <h3>Magna Nullam</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="#" class="image fit"><img src="${resource(dir: 'images', file: 'pic05.jpg')}" alt="" /></a>
-                        <header>
-                            <h3>Natoque Vitae</h3>
-                        </header>
-                    </article>
-                </div>
-                <div class="4u$ 12u$(mobile)">
-                    <article class="item">
-                        <a href="#" class="image fit"><img src="${resource(dir: 'images', file: 'pic06.jpg')}" alt="" /></a>
-                        <header>
-                            <h3>Dolor Penatibus</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="#" class="image fit"><img src="${resource(dir: 'images', file: 'pic07.jpg')}" alt="" /></a>
-                        <header>
-                            <h3>Orci Convallis</h3>
-                        </header>
-                    </article>
-                </div>
-            </div>
-
-        </div>
-    </section>
 
     <!-- About Me -->
-    <section id="about" class="three">
-        <div class="container">
 
-            <header>
-                <h2>About Me</h2>
-            </header>
+<section id="editProfile">
 
-            <a href="#" class="image featured"><img src="${resource(dir: 'images', file: 'pic08.jpg')}" alt="" /></a>
+    <header>
+        <h2>Editar Perfil Usuario</h2>
+    </header>
+<h2>Información Obligatoria</h2>
+    <h3>Cargo en el laboratorio</h3>
+    <g:form action="updateRol" method="post" >
+        <div>
+            <table>
+                <tbody>
+                <g:select optionKey="id" from="${roles}" name="role" value="${roles.id}" >
+                </g:select>
 
-            <p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus
-            ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae
-            laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem
-            parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper
-            dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec
-            ornare iaculis.</p>
 
+                </tbody>
+            </table>
         </div>
+        <div class="buttons">
+            <input  type="submit" value="update" />
+        </div>
+        <hr  hspace="20" >
+
+        <h3>Nombre Completo</h3>
+    </g:form>
+
+     <div>
+        <table>
+            <tbody>
+     <g:form  action="updateName" method="post"  >
+        <li><input value="Nombres" name = "userName" >
+         <input value="Apellidos" name = "userLast" >
+        </li>
+         </tbody>
+</table>
+         <div class="buttons">
+             <input  type="submit" value="update" />
+         </div>
+     </g:form >
+
+    </div>
+<div>
+
+<hr>
+
+    <h3>Area de Investigación</h3>
+    <g:form action="updateArea" method="post" >
+        <div>
+            <table>
+                <tbody>
+                <g:select optionKey="id" from="${areas}" name="harea" value="${areas.id}" >
+
+                </g:select>
+
+
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons">
+            <input  type="submit" value="update" />
+        </div>
+        <hr  hspace="20" >
+
+    </g:form>
+
+
+
+</div>
+
+</section>
+
+
+    <section id="NOobligatorio">
+        <h2> Campos no Obligatorios</h2>
+
+        <h3>Publicaciones en revistas científicas</h3>
+
+
+        <g:form action="setPublic" method="post" >
+            <div>
+                <table>
+                    <tbody>
+
+
+
+
+                    <td>
+                        <p> Elija Área</p>
+                    <g:select optionKey="id" from="${areas}" name="harea" value="${areas.id}" >
+
+                    </g:select>
+                    </td>
+
+                    <li><input value="Autor" name = "autorName" >
+                        <input value="Link" name = "publiLink" >
+                    </li>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="buttons">
+                <input  type="submit" value="update" />
+            </div>
+            <hr  hspace="20" >
+
+        </g:form>
+
+
+</div>
+
     </section>
-
-
 
 </div>
 
@@ -190,7 +206,7 @@
 
     <!-- Copyright -->
     <ul class="copyright">
-        <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        <li>&copy; Labmmba. All rights reserved.</li><li>Design: G02 FISW2015-2 </li>
     </ul>
 
 </div>
