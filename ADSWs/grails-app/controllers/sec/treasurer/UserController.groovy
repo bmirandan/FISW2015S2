@@ -226,6 +226,7 @@ class UserController {
 
     def save = {
         def userInstance = new User(params)
+
         if(!userInstance.hasErrors() && userInstance.save()) {
             flash.message = "User ${userInstance.id} registered"
             redirect(action:show,id:userInstance.id)
@@ -246,6 +247,8 @@ class UserController {
             user.firstName=params.firstName
             user.lastName=params.lastName
             user.description=params.description
+            user.email=params.email
+            user.area.id=5
             user.save()
             redirect (controller:'homepage', action:'home')
         }
@@ -289,7 +292,8 @@ class UserController {
         */
 
     }
-    def setPublic={
+    def setMagazine={
+
 
     }
 
@@ -305,6 +309,16 @@ class UserController {
     }
 
 
+    def setEnable(){
 
+        User user=User.findByUserName(params.usern)
+        // se hace a la forma de grails una query
+        // UPDATE `sec_treasurer`.`user` SET `enabled`=True WHERE `id`='4';
+        User.executeUpdate("update User U set U.enabled=:valu " +
+                "where U.id=:id",
+                [valu: true, id: user.id])
+
+        redirect(controller: 'homepage',action: 'dashboard')
+    }
     def scaffold = User
 }

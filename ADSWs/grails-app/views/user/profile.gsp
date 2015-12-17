@@ -42,7 +42,6 @@
 
             <ul>
                 <li><a href="#editProfile" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Editar perfil</span></a></li>
-                <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
                 <li><a href="#NOobligatorio" id="adcional" class="skel-layers-ignoreHref"><span class="icon fa-user">Información adicional</span></a></li>
 
             </ul>
@@ -160,30 +159,34 @@
 
 
     <section id="NOobligatorio">
-        <h2> Campos no Obligatorios</h2>
+        <h2> Información Adicional</h2>
 
         <h3>Publicaciones en revistas científicas</h3>
 
 
-        <g:form action="setPublic" method="post" >
+        <g:form action="setMagazine" method="post" >
             <div>
                 <table>
                     <tbody>
-
-
-
-
-                    <td>
-                        <p> Elija Área</p>
+                    <tr>
+                    <h4> Elija Área</h4>
+                    <tr class="prop">
                     <g:select optionKey="id" from="${areas}" name="harea" value="${areas.id}" >
-
                     </g:select>
+                    </tr>
                     </td>
 
-                    <li><input value="Autor" name = "autorName" >
-                        <input value="Link" name = "publiLink" >
-                    </li>
+                    <li>
+                        <input value="Nombre articulo" name = "Name" >
+                        <input value="Nombre revista" name = "magaName" >
+                        <input value="Autor1 Autor2" name = "autorNames" >
 
+                    </li>
+                    <li>
+                        <input value="keyword1 keyword2" name = "keywords" >
+                        <input value="Año" name = "year" >
+                        <input value="Link" name = "magaLink" >
+                    </li>
                     </tbody>
                 </table>
             </div>
