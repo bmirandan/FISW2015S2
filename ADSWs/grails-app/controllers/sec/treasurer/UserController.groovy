@@ -57,7 +57,7 @@ class UserController {
             redirect (controller: 'user', action: 'login')
         }
 
-        if(user.role.isAdmin == true){
+        if(user.role.isAdmin){
             session.user = user
             redirect(controller: 'homepage',action: 'dashboard')
         }
@@ -260,7 +260,7 @@ class UserController {
     def profile = {
         def user = session.user
 
-       def Rolesg=  Role.getAll(3,4,5,6,7,8)
+       def Rolesg=  Role.getAll()
 
 
         def Areas =  Investigation_Area.getAll()
@@ -294,6 +294,17 @@ class UserController {
     }
     def setMagazine={
 
+//INSERT INTO `sec_treasurer`.`magazine`
+// (`id`, `version`, `isbn`, `autores`, `editorial`, `link`, `name`,
+// `revista`, `year`, `magazine_name`, `magazinen`)
+// VALUES ('1', '0', 'd', 'dd', 'd', 'd', 'dd', 'dd', 'dd', 'dd', 'dd');
+
+
+        /* name="harea" value="${areas.id}" >
+        <input value="Nombre articulo" name = "Name" >
+        <input value="Nombre revista" name = "magaName" >
+        <input value="Autor1 Autor2" name = "autorNames" >
+        */
 
     }
 

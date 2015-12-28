@@ -84,7 +84,7 @@
 
                 <tr class="prop">
                     <td valign="top" class="name">
-                        <label for="areas" >Area:</label>
+                        <label for="areas " >Area:</label>
                     </td>
                     <td valign="top" class="value ${hasErrors(bean:userInstance,field:'area','errors')}">
                         <g:select optionKey="id" from="${Investigation_Area.getAll()}" name="area.id" value="${userInstance?.area?.id}" ></g:select>
@@ -94,6 +94,8 @@
                     <td valign="top" class="name">
                         <label for="role" >Role:</label>
                     </td>
+
+
                     <td valign="top" class="value ${hasErrors(bean:userInstance,field:'role','errors')}">
                         <g:select optionKey="id" from="${Role.list()}" name="role.id" value="${userInstance?.role?.id}" ></g:select>
                     </td>

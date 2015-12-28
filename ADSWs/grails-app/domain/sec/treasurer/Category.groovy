@@ -7,6 +7,11 @@ class Category {
    */
 
     String name
+
+    static hasMany = [document:Document]
+
+    static belongsTo = [Document]
+    
     static constraints = {
     }
 }

@@ -8,7 +8,7 @@ class Document {
 
     static belongsTo = [User]
 
-    static hasMany = [Category]
+    static hasMany = [category: Category]
     String titulo /*y otros metodos*/
     /*
            atributos por definir

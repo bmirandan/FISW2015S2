@@ -95,14 +95,12 @@
     <h3>Cargo en el laboratorio</h3>
     <g:form action="updateRol" method="post" >
         <div>
-            <table>
                 <tbody>
                 <g:select optionKey="id" from="${roles}" name="role" value="${roles.id}" >
                 </g:select>
 
 
                 </tbody>
-            </table>
         </div>
         <div class="buttons">
             <input  type="submit" value="update" />
@@ -174,6 +172,7 @@
                     <g:select optionKey="id" from="${areas}" name="harea" value="${areas.id}" >
                     </g:select>
                     </tr>
+
                     </td>
 
                     <li>

@@ -3,8 +3,8 @@ package sec.treasurer
 class Magazine {
     String name
     String link
-    String magazineN
-    ArrayList<String> keywords = new ArrayList<String>()
+    String Autor
+    String keywords
     Date year
 
     static hasMany = [user:User]
