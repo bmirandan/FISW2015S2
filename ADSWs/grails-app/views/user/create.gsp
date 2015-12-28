@@ -5,7 +5,7 @@
   Time: 10:45 AM
 --%>
 
-<%@ page import="sec.treasurer.Role" contentType="text/html;charset=UTF-8" %>
+<%@ page import="sec.treasurer.Investigation_Area; sec.treasurer.Role" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -35,6 +35,14 @@
                     </td>
                     <td valign="top" class="value ${hasErrors(bean:userInstance,field:'userName','errors')}">
                         <input type="text" id="userName" name="userName" value="${fieldValue(bean:userInstance,field:'userName')}"/>
+                    </td>
+                </tr>
+                <tr class="prop">
+                    <td valign="top" class="name">
+                        <label for="email" >email</label>
+                    </td>
+                    <td valign="top" class="value ${hasErrors(bean:userInstance,field:'email','errors')}">
+                        <input type="text" id="email" name="email" value="${fieldValue(bean:userInstance,field:'email')}"/>
                     </td>
                 </tr>
 
@@ -76,8 +84,18 @@
 
                 <tr class="prop">
                     <td valign="top" class="name">
+                        <label for="areas " >Area:</label>
+                    </td>
+                    <td valign="top" class="value ${hasErrors(bean:userInstance,field:'area','errors')}">
+                        <g:select optionKey="id" from="${Investigation_Area.getAll()}" name="area.id" value="${userInstance?.area?.id}" ></g:select>
+                    </td>
+                </tr>
+                <tr class="prop">
+                    <td valign="top" class="name">
                         <label for="role" >Role:</label>
                     </td>
+
+
                     <td valign="top" class="value ${hasErrors(bean:userInstance,field:'role','errors')}">
                         <g:select optionKey="id" from="${Role.list()}" name="role.id" value="${userInstance?.role?.id}" ></g:select>
                     </td>

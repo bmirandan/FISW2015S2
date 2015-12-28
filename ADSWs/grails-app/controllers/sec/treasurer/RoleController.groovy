@@ -96,4 +96,5 @@ class RoleController {
             render(view:'create',model:[roleInstance:roleInstance])
         }
     }
+
 }

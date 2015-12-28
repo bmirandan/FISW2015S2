@@ -1,17 +1,18 @@
 package sec.treasurer
 
-class Publications {
-
+class Magazine {
     String name
     String link
-    String autores
-    String revista
+    String Autor
     String keywords
-    String ISBN
     Date year
-    String editorial
+
+    static hasMany = [user:User]
 
     static belongsTo = [User]
+
     static constraints = {
     }
+
+
 }

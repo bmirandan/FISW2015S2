@@ -48,14 +48,7 @@ class HomepageController {
 
     def setEnable(String userName){
 
-        User user=User.findByUserName(userName)
-        // se hace a la forma de grails una query
-        // UPDATE `sec_treasurer`.`user` SET `enabled`=True WHERE `id`='4';
-        User.executeUpdate("update User U set U.enabled=:valu " +
-                "where U.id=:id",
-                [valu: true, id: user.id])
-
-       redirect(controller: 'homepage',action: 'dashboard')
+      redirect(controller: 'user',action: 'setEnable',params:[usern: userName] )
     }
 
 

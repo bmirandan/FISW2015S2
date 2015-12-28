@@ -57,7 +57,7 @@ class UserController {
             redirect (controller: 'user', action: 'login')
         }
 
-        if(user.role.isAdmin == true){
+        if(user.role.isAdmin){
             session.user = user
             redirect(controller: 'homepage',action: 'dashboard')
         }
@@ -226,6 +226,7 @@ class UserController {
 
     def save = {
         def userInstance = new User(params)
+
         if(!userInstance.hasErrors() && userInstance.save()) {
             flash.message = "User ${userInstance.id} registered"
             redirect(action:show,id:userInstance.id)
@@ -246,6 +247,8 @@ class UserController {
             user.firstName=params.firstName
             user.lastName=params.lastName
             user.description=params.description
+            user.email=params.email
+            user.area.id=5
             user.save()
             redirect (controller:'homepage', action:'home')
         }
@@ -257,7 +260,7 @@ class UserController {
     def profile = {
         def user = session.user
 
-       def Rolesg=  Role.getAll(3,4,5,6,7,8)
+       def Rolesg=  Role.getAll()
 
 
         def Areas =  Investigation_Area.getAll()
@@ -289,7 +292,19 @@ class UserController {
         */
 
     }
-    def setPublic={
+    def setMagazine={
+
+//INSERT INTO `sec_treasurer`.`magazine`
+// (`id`, `version`, `isbn`, `autores`, `editorial`, `link`, `name`,
+// `revista`, `year`, `magazine_name`, `magazinen`)
+// VALUES ('1', '0', 'd', 'dd', 'd', 'd', 'dd', 'dd', 'dd', 'dd', 'dd');
+
+
+        /* name="harea" value="${areas.id}" >
+        <input value="Nombre articulo" name = "Name" >
+        <input value="Nombre revista" name = "magaName" >
+        <input value="Autor1 Autor2" name = "autorNames" >
+        */
 
     }
 
@@ -305,6 +320,16 @@ class UserController {
     }
 
 
+    def setEnable(){
 
+        User user=User.findByUserName(params.usern)
+        // se hace a la forma de grails una query
+        // UPDATE `sec_treasurer`.`user` SET `enabled`=True WHERE `id`='4';
+        User.executeUpdate("update User U set U.enabled=:valu " +
+                "where U.id=:id",
+                [valu: true, id: user.id])
+
+        redirect(controller: 'homepage',action: 'dashboard')
+    }
     def scaffold = User
 }

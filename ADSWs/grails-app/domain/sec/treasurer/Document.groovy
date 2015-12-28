@@ -6,7 +6,9 @@ class Document {
     String link
     Date uploadDate = new Date()
 
-    static belongsTo = [User, Category]
+    static belongsTo = [User]
+
+    static hasMany = [category: Category]
     String titulo /*y otros metodos*/
     /*
            atributos por definir

@@ -13,16 +13,21 @@ class User {
     byte[] avatar
     String avatarType
     Investigation_Area area
+    ArrayList<String> preGrade = new ArrayList<String>()
+    ArrayList<String> postGrade = new ArrayList<String>()
 
 
     static transients = ["confirmPassword"]
 
     static hasMany = [documents: Document,
-                      publicationss: Publications,
+                      publications: Publication,
                       thesiss: Thesis,
-                      conventions:sec.treasurer.Convention,
-                      user_notifications: sec.treasurer.User_Notification,
-                      projects: sec.treasurer.Project]
+                      conventions:Convention,
+                      user_notifications: Notification,
+                      projects: Project,
+                      magazines: Magazine
+
+                ]
 
     static belongsTo = [Role, Investigation_Area]
     static constraints = {
@@ -34,7 +39,7 @@ class User {
         avatar(nullable:true, maxSize: 56384 /* 16K */)
         avatarType(nullable:true)
         enabled(nullable: false)
-
+        area{nullable: true}
 
     }
 
