@@ -57,7 +57,11 @@ class UserController {
             redirect (controller: 'user', action: 'login')
         }
 
-        if(user.role.isAdmin){
+        def Rol=  Role.get((user.role.id).toInteger())
+
+
+
+        if(Rol.isAdmin){
             session.user = user
             redirect(controller: 'homepage',action: 'dashboard')
         }
@@ -218,7 +222,7 @@ class UserController {
         }
     }
 
-    def create = {
+    def register = {
         def userInstance = new User()
         userInstance.properties = params
         return ['userInstance':userInstance]
@@ -232,7 +236,7 @@ class UserController {
             redirect(action:show,id:userInstance.id)
         }
         else {
-            render(view:'create',model:[userInstance:userInstance])
+            render(view:'register',model:[userInstance:userInstance])
         }
     }
 
@@ -246,9 +250,10 @@ class UserController {
             user.enabled = false
             user.firstName=params.firstName
             user.lastName=params.lastName
-            user.description=params.description
+
             user.email=params.email
             user.area.id=5
+            user.role.id=8
             user.save()
             redirect (controller:'homepage', action:'home')
         }

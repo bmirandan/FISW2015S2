@@ -31,11 +31,11 @@ class User {
 
     static belongsTo = [Role, Investigation_Area]
     static constraints = {
-        userName (nullable:false, unique: true)
+        userName (nullable: true, unique: true)
         firstName (nullalbe: false)
         lastName  (nullalbe: false)
         email(nullable: false)
-        description ()
+        description (nullable: true)
         avatar(nullable:true, maxSize: 56384 /* 16K */)
         avatarType(nullable:true)
         enabled(nullable: false)

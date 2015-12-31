@@ -5,7 +5,7 @@ import sec.treasurer.User
 class BootStrap {
 
     def init = { servletContext ->
-        new Role(name:'Admin', isAdmin:true).save()
+    /*    new Role(name:'Admin', isAdmin:true).save()
         new Role(name: 'Estudiante de Pregrado',isAdmin: false).save()
         new Role(name: 'Estudiante de Postgrado',isAdmin: false).save()
         new Role(name: 'Trabajador',isAdmin: false).save()
@@ -17,6 +17,8 @@ class BootStrap {
         new Investigation_Area(name: 'Microbiología').save()
         new Investigation_Area(name: 'Biotecnología ambiental').save()
 
+*/
+//se debe agregar el usuario a la base de datos admin por ahora manualmente
     }
     def destroy = {
     }
