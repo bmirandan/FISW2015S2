@@ -16,7 +16,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'main2.css')}">
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
@@ -35,14 +35,17 @@
             <span class="image avatar48"><img src= "${resource(dir: 'images', file: 'avatar.jpg')}" /></span>
             <h1 id="title">${session.user } </h1>
             <p> ${session.user.role.name}</p>
-        </div>
+            <p> ${session.user.area.name}</p>
+
+
+    </div>
 
         <!-- Nav -->
         <nav id="nav">
 
             <ul>
-                <li><a href="#editProfile" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Editar perfil</span></a></li>
-                <li><a href="#NOobligatorio" id="adcional" class="skel-layers-ignoreHref"><span class="icon fa-user">Información adicional</span></a></li>
+                <li><a href="#editProfile" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Editar perfil</span></a></li>
+                <li><a href="#NOobligatorio" id="adcional" class="skel-layers-ignoreHref"><span class="icon fa-cog">Información adicional</span></a></li>
 
             </ul>
 

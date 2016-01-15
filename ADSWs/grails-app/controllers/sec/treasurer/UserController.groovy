@@ -56,15 +56,13 @@ class UserController {
             flash.message = "User not found!"
             redirect (controller: 'user', action: 'login')
         }
-
-        def Rol=  Role.get((user.role.id).toInteger())
-
-
-
-        if(Rol.isAdmin){
+       // System.out.println(Role.get((User.findByUserName(params.userName)).roleId).isAdmin)
+        if((Role.get((User.findByUserName(params.userName)).roleId)).isAdmin){
             session.user = user
-            redirect(controller: 'homepage',action: 'dashboard')
+            def usuario=User.findByUserName(params.UserName)
+            redirect(controller: 'homepage',action: 'dashboard',params: ['userName': usuario])
         }
+
 
         else {
             session.user = user
@@ -264,7 +262,7 @@ class UserController {
     }
     def profile = {
         def user = session.user
-
+        def rol= user.role
        def Rolesg=  Role.getAll()
 
 
