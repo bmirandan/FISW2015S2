@@ -56,11 +56,13 @@ class UserController {
             flash.message = "User not found!"
             redirect (controller: 'user', action: 'login')
         }
-
-        if(user.role.isAdmin == true){
+       // System.out.println(Role.get((User.findByUserName(params.userName)).roleId).isAdmin)
+        if((Role.get((User.findByUserName(params.userName)).roleId)).isAdmin){
             session.user = user
-            redirect(controller: 'homepage',action: 'dashboard')
+            def usuario=User.findByUserName(params.UserName)
+            redirect(controller: 'homepage',action: 'dashboard',params: ['userName': usuario])
         }
+
 
         else {
             session.user = user
@@ -218,7 +220,7 @@ class UserController {
         }
     }
 
-    def create = {
+    def register = {
         def userInstance = new User()
         userInstance.properties = params
         return ['userInstance':userInstance]
@@ -232,7 +234,7 @@ class UserController {
             redirect(action:show,id:userInstance.id)
         }
         else {
-            render(view:'create',model:[userInstance:userInstance])
+            render(view:'register',model:[userInstance:userInstance])
         }
     }
 
@@ -246,9 +248,10 @@ class UserController {
             user.enabled = false
             user.firstName=params.firstName
             user.lastName=params.lastName
-            user.description=params.description
+
             user.email=params.email
             user.area.id=5
+            user.role.id=8
             user.save()
             redirect (controller:'homepage', action:'home')
         }
@@ -259,8 +262,8 @@ class UserController {
     }
     def profile = {
         def user = session.user
-
-       def Rolesg=  Role.getAll(3,4,5,6,7,8)
+        def rol= user.role
+       def Rolesg=  Role.getAll()
 
 
         def Areas =  Investigation_Area.getAll()
@@ -294,6 +297,17 @@ class UserController {
     }
     def setMagazine={
 
+//INSERT INTO `sec_treasurer`.`magazine`
+// (`id`, `version`, `isbn`, `autores`, `editorial`, `link`, `name`,
+// `revista`, `year`, `magazine_name`, `magazinen`)
+// VALUES ('1', '0', 'd', 'dd', 'd', 'd', 'dd', 'dd', 'dd', 'dd', 'dd');
+
+
+        /* name="harea" value="${areas.id}" >
+        <input value="Nombre articulo" name = "Name" >
+        <input value="Nombre revista" name = "magaName" >
+        <input value="Autor1 Autor2" name = "autorNames" >
+        */
 
     }
 

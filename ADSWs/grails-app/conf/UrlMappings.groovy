@@ -7,6 +7,12 @@ class UrlMappings {
             }
         }
 
+
+
+        "/register"(controller:"/user/register")
+
+        "/login"(controller:"/user/login")
+
         "/"(view:"/index")
         "500"(view:'/error')
 	}

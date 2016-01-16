@@ -8,40 +8,27 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <style>	#princ {
-        width: 300px;
-        margin: 300px;
-        height: auto;
-        text-align: center;
-    } #princ2 {
-                         width: 400px;
-                         margin: 30px;
-                         height: 300px;
-                         text-align: center;
-                     }
-    </style>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="layout" content="main" />
     <title>Log in</title>
 </head>
-<body>
+<div id="container1">
 
-<div>
+<h1 style="align-content: center">Ingresa tus datos</h1>
+<section >
+
+<div id="login">
 <g:if test="${flash.message}">
     <div class="message">
         ${flash.message}
     </div>
 </g:if>
-<p>
-    Welcome, Enter your login and password.
-</p>
+
 <g:form method="post" action="handleLogin">
 
-    <span>
-        <label for="userName">Sign In</label>
-    </span>
 
-    <div id="princ2">
+
         <span class='nameClear'>
             <label for="userName">User Name</label>
         </span>
@@ -53,12 +40,11 @@
     <input type="password" id="password" name="password"/>
     <br />
     <div class="buttons">
-        <span class="button">
             <g:actionSubmit class ="login" value="Sign in!" action="handleLogin"/>
-        </span>
+
     </div>
-    </div>
+
 </g:form>
 
-</div>
-</body></html>
+</section>
+   </html>

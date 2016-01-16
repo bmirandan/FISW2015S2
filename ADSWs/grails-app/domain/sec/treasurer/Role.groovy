@@ -9,6 +9,7 @@ class Role {
     static constraints = {
         name (nullable: false, unique: true)
     }
+
     String toString () {
         name
     }

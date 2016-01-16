@@ -12,7 +12,6 @@ class Investigation_Area {
     name {nullable: true}
         }
 
-    @Override
     String toString() {
         name
     }

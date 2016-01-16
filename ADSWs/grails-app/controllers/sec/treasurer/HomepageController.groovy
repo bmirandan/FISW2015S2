@@ -28,10 +28,11 @@ class HomepageController {
             redirect(controller: 'homepage',action: 'home')
         }
 
-       List<User> unableUsers = User.findAllByEnabled(false)
+        List<User> unableUsers = User.findAllByEnabled(false)
 
         [userList:unableUsers]
     }
+
 
 /*
     @Transactional
@@ -50,6 +51,5 @@ class HomepageController {
 
       redirect(controller: 'user',action: 'setEnable',params:[usern: userName] )
     }
-
 
 }
