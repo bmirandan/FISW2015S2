@@ -8,14 +8,23 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="layout" content="main" />
-    <title>Show User</title>
+    <title> Register </title>
 </head>
 <body>
-<g:render template="/user/template/navigation" />
-<div class="body">
-    <h1>Show User</h1>
+<div class="body"style="margin: auto;  width: 60%;padding: 50px;
+">
+<h1>Register information </h1>
+</div>
+<div class="body" style="margin: auto;  width: 60%;
+padding: 10px ; border: 2px crimson solid">
+
+    <h1> information successfully sent !</h1>
+
+    <p style="padding-top: 3px"> Wait until Administrator or Director confirms your entrance to the plataform, check your email ! </p>
+
     <g:if test="${flash.message}">
         <div class="message">${flash.message}</div>
     </g:if>
@@ -24,17 +33,12 @@
             <tbody>
 
 
-            <tr class="prop">
-                <td valign="top" class="name">Id:</td>
 
-                <td valign="top" class="value">${fieldValue(bean:userInstance, field:'id')}</td>
-
-            </tr>
 
             <tr class="prop">
                 <td valign="top" class="name">User Name:</td>
 
-                <td valign="top" class="value">${fieldValue(bean:userInstance, field:'userName')}</td>
+                <td valign="top" class="value">  </td>
 
             </tr>
 
@@ -74,26 +78,12 @@
 
             </tr>
 
-            <tr class="prop">
-                <td valign="top" class="name">Confirm Password:</td>
-
-                <td valign="top" class="value">${fieldValue(bean:userInstance, field:'confirmPassword')}</td>
-
-            </tr>
 
             </tbody>
         </table>
     </div>
-    <div class="buttons">
-        <g:form>
-            <input type="hidden" name="id" value="${userInstance?.id}" />
-            <span class="button"><g:actionSubmit class="edit" value="Edit" /></span>
-            <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
-        </g:form>
-    </div>
-    <g:if test="${userInstance?.avatar}">
-        <img class="avatar" src="${createLink(controller:'user', action:'avatar_image', id:userInstance?.ident())}" />
-    </g:if>
+
+
 </div>
 </body>
 </html>

@@ -18,6 +18,7 @@ hibernate {
 
         environments {
             development {
+                uploadFolder = "C:\\Users\\pc-1\\Desktop\\ADSWs\\grails-app\\cargaUsuarios\\"
                 dataSource {
                     dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
                     url = "jdbc:mysql://localhost/sec_treasurer?useUnicode=yes&characterEncoding=UTF-8"
@@ -26,6 +27,8 @@ hibernate {
                 }
             }
             test {
+                uploadFolder = "C:\\Users\\pc-1\\Desktop\\ADSWs\\grails-app\\cargaUsuarios"
+
                 dataSource {
                     dbCreate = "update"
                     url = "jdbc:mysql://localhost/sec_treasurer_prod?useUnicode=yes&characterEncoding=UTF-8"
@@ -34,6 +37,8 @@ hibernate {
                 }
             }
             production {
+                uploadFolder = "C:\\Users\\pc-1\\Desktop\\ADSWs\\grails-app\\cargaUsuarios"
+
                 dataSource {
                     dbCreate = "update"
                     url = "jdbc:mysql://localhost/sec_treasurer_prod?useUnicode=yes&characterEncoding=UTF-8"

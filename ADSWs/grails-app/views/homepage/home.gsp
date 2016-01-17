@@ -28,6 +28,25 @@
 
         <br />
 
+        <h1>Upload New Publication</h1>
+        <g:if test="${flash.message}"><div class="message" role="status">${flash.message}</div></g:if>
+        <g:uploadForm controller="publication" action="upload">
+            <li><input value="Authors" name = "authors" >
+                <input value="Magazine" name = "magazine" >
+                <input value="Keywords" name = "keywords" >
+                <input value="ISBN" name = "isbn" >
+                <input value="Editorial" name = "Editorial" >
+                String editorial
+
+            <fieldset class="form">
+                <input type="file" name="file" />
+            </fieldset>
+            <fieldset class="buttons">
+                <g:submitButton name="upload" class="save" value="Upload" />
+            </fieldset>
+            </li>
+
+        </g:uploadForm>
 
 
 <a href="/ADSW/user/profile" class="button"> Perfil </a>

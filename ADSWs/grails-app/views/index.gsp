@@ -18,7 +18,6 @@
 	<asset:javascript src="jquery.min.js"/>
 	<asset:javascript src="skel.min.js"/>
 	<asset:javascript src="skel-layers.min.js"/>
-
 	<g:javascript> document.body.style.zoom="50%"
 	</g:javascript>
 	<style type="text/css">html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}body{-webkit-text-size-adjust:none}</style>
@@ -40,8 +39,8 @@ zoom: 88%; " class="landing">
 			<li><a href="#">Areas de investigación </a></li>
 			<li><a href="#">Integrantes </a></li>
 			<li><a href="#">Ubicación </a></li>
-
 			<li><a href="login" class="button special">Log In</a></li>
+
 		</ul>
 	</nav>
 </header>
@@ -57,11 +56,11 @@ zoom: 88%; " class="landing">
 
 	<!-- Banner -->
 	<section id="banner">
-		<h2>Bienvenido!</h2>
-		<p>Laboratorio de Microbiología Molecular y Biotecnología Ambiental.</p>
+		<h2>Welcome!</h2>
+		<p>Laboratory of Molecular biology and Enviroment biotechnology.</p>
 		<ul class="actions">
 			<li>
-				<a href="register" class="button big">Registrate!</a>
+				<a href="register" class="button big">Sign up!</a>
 			</li>
 		</ul>
 	</section>

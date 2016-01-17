@@ -55,7 +55,7 @@ class MailService implements InitializingBean, DisposableBean {
         messageBuilder.sendMessage(mailExecutorService)
     }
 
-    MailMessage sendMail(Closure callable) {
+    def sendMail = { Closure callable ->
         return sendMail(mailConfig, callable)
     }
 
