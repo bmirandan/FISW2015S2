@@ -16,30 +16,29 @@
 <h3>Usuarios activar </h3>
 
 
-<table>
-    <tbody><tr>
+    <table>
+    <tbody>
+    <tr>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>User</th>
-        <th>Autorizar</th>
+        <th>Email</th>
+        <th>User name</th>
+        <th>Autorice</th>
     </tr>
     <g:each in="${userList}" var="p">
         <tr>
-         <td>${p.firstName}</td>
+        <td>${p.firstName}</td>
         <td>${p.lastName}</td>
-        <td>${p.userName}</td>
+        <td>${p.email}</td>
         <td> <g:form  >
-            <input type="hidden" value = "${p.userName}" name = "userName" >
-            <g:actionSubmit  value = "Autorizar" action="setEnable"/>
+            <input value="Enter user name to assign" name="userName">
+            <input type="hidden" value = "${p.email}" name = "email" >
+        <g:actionSubmit value = "Autorizar" action="setEnable"/>
         </g:form></td>
-
     </g:each>
-
-
-
     </tr>
-
-    </tbody></table>
+    </tbody>
+    </table>
 
 
 

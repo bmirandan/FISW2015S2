@@ -2,6 +2,8 @@ package sec.treasurer
 
 class UserController {
 
+    def mailService
+
     def beforeInterceptor = {
         def user = session.user
         if (user) {
@@ -57,9 +59,9 @@ class UserController {
             redirect (controller: 'user', action: 'login')
         }
        // System.out.println(Role.get((User.findByUserName(params.userName)).roleId).isAdmin)
-        if((Role.get((User.findByUserName(params.userName)).roleId)).isAdmin){
+        if(((User.findByUserName(params.userName)).role).isAdmin){
             session.user = user
-            def usuario=User.findByUserName(params.UserName)
+            def usuario=User.findByUserName(params.userName)
             redirect(controller: 'homepage',action: 'dashboard',params: ['userName': usuario])
         }
 
@@ -241,7 +243,7 @@ class UserController {
     def saveprofile = {
         def user = session.user;
         if (!user) {
-            flash.message = "sec.treasurer.User not found!"
+            flash.message = "User not found!"
             redirect (controller: 'user', action: 'login')
         }
         else {
@@ -249,7 +251,7 @@ class UserController {
             user.firstName=params.firstName
             user.lastName=params.lastName
 
-            user.email=params.email
+            user.userName=params.userName
             user.area.id=5
             user.role.id=8
             user.save()
@@ -281,7 +283,7 @@ class UserController {
     }
     def updateArea ={
         def usuario= session.user
-        int value = params.harea.toInteger()
+        int value = (Investigation_Area.findByName(params.harea)).id
         long cvalue = Long.valueOf(value)
         User.executeUpdate("update User U set U.area.id =:valu " +
                 "where U.id=:id",
@@ -313,8 +315,9 @@ class UserController {
 
     def updateRol={
         def usuario = session.user
-        int value = params.role.toInteger()
-        long cvalue = Long.valueOf(value)
+
+        int value = (Role.findByName(params.role)).id
+                long cvalue = Long.valueOf(value)
         User.executeUpdate("update User U set U.role.id =:valu " +
                 "where U.id=:id",
                 [valu: cvalue  , id: usuario.id])
@@ -324,15 +327,30 @@ class UserController {
 
 
     def setEnable(){
-
-        User user=User.findByUserName(params.usern)
+        User user=User.findByEmail(params.email)
         // se hace a la forma de grails una query
         // UPDATE `sec_treasurer`.`user` SET `enabled`=True WHERE `id`='4';
-        User.executeUpdate("update User U set U.enabled=:valu " +
+         User.executeUpdate("update User U set U.enabled=:valu " +
                 "where U.id=:id",
                 [valu: true, id: user.id])
+        User.executeUpdate("update User U set U.userName=:valu " +
+                "where U.id=:id",
+                [valu: params.name, id: user.id])
+
+        mailService.sendMail {
+            to user.email
+            from session.user.email
+
+            subject "Bienvenido a labmmba " + user.firstName
+            body "Se ha activado su cuenta de Labmmba, su nombre de usuario es: " + params.name +
+                    "y su contraseña es: "+user.password+", con estos puede ingresar a la plataforma"
+        }
 
         redirect(controller: 'homepage',action: 'dashboard')
     }
+
+
+
+
     def scaffold = User
 }

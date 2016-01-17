@@ -99,7 +99,7 @@
     <g:form action="updateRol" method="post" >
         <div>
                 <tbody>
-                <g:select optionKey="id" from="${roles}" name="role" value="${roles.id}" >
+                <g:select from="${roles.name}" optionKey="${id}" name="role"  >
                 </g:select>
 
 
@@ -137,8 +137,7 @@
         <div>
             <table>
                 <tbody>
-                <g:select optionKey="id" from="${areas}" name="harea" value="${areas.id}" >
-
+                <g:select from="${areas.name}" name="harea" value="${name}" >
                 </g:select>
 
 
@@ -172,9 +171,9 @@
                     <tr>
                     <h4> Elija Área</h4>
                     <tr class="prop">
-                    <g:select optionKey="id" from="${areas}" name="harea" value="${areas.id}" >
-                    </g:select>
-                    </tr>
+                        <g:select from="${areas.name}" name="harea" value="${name}" >
+                        </g:select>
+                      </tr>
 
                     </td>
 

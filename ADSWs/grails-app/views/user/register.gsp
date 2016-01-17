@@ -84,8 +84,9 @@ text-align: center;" class="body">
 
                 </tbody>
             </table>
-        <input type="hidden" name="userName" value="nulle">
+
         <input type="hidden" name="description" value="nulle">
+        <input type="hidden" name="userName" value="">
         <input type="hidden" name="area.id" value="5">
         <input type="hidden" name="role.id" value="8">
         <div style="padding-top:10px; align:right">

@@ -57,9 +57,19 @@ grails {
         // escapes all not-encoded output at final stage of outputting
         // filteringCodecForContentType.'text/html' = 'html'
     }
+    mail {
+        host = "smtp.gmail.com"
+        port = 465
+        username = "labmmbautfsm@gmail.com"
+        password = "1!q2w3e4r"
+        props = ["mail.smtp.auth":"true",
+                 "mail.smtp.socketFactory.port":"465",
+                 "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+                 "mail.smtp.socketFactory.fallback":"false"]
+    }
 }
 
-
+grails.mail.default.from="deskisio10@gmail.com"
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration
 grails.scaffolding.templates.domainSuffix = 'Instance'

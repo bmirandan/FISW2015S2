@@ -13,13 +13,17 @@
     <meta name="layout" content="main" />
     <title>Log in</title>
 </head>
-<div id="container1">
-
-<h1 style="align-content: center">Ingresa tus datos</h1>
 <section >
+<div>
 
-<div id="login">
-<g:if test="${flash.message}">
+</div>
+<div style="padding-top:50px " id="container1">
+
+<div id="login" >
+
+    <h1 style="align-content: center">Login</h1>
+
+       <g:if test="${flash.message}">
     <div class="message">
         ${flash.message}
     </div>
@@ -28,16 +32,26 @@
 <g:form method="post" action="handleLogin">
 
 
+    <table class="tg-wrap">
+        <tr>
+            <th >   <span class='nameClear'>
+                <label for="userName">User Name</label>
+            </span>
+                <input id="userName" name="userName"/>
+                <br /> </th>
+            <th rowspan="2"><a class="icon fa-user fa-5x"> </a> </th>
+        </tr>
+        <tr>
+            <td  <span class='nameClear'>
+                <label for="password">Password</label>
+            </span>
+                <input id="password" name="password"/></td>
+        </tr>
+    </table>
 
-        <span class='nameClear'>
-            <label for="userName">User Name</label>
-        </span>
-    <input type="text" id="userName" name="userName"/>
-    <br />
-    <span class='nameClear'>
-        <label for="password">Password</label>
-    </span>
-    <input type="password" id="password" name="password"/>
+
+
+
     <br />
     <div class="buttons">
             <g:actionSubmit class ="login" value="Sign in!" action="handleLogin"/>

@@ -34,7 +34,7 @@ class User {
         userName (nullable: true, unique: true)
         firstName (nullalbe: false)
         lastName  (nullalbe: false)
-        email(nullable: false)
+        email(nullable: false, unique:true)
         description (nullable: true)
         avatar(nullable:true, maxSize: 56384 /* 16K */)
         avatarType(nullable:true)

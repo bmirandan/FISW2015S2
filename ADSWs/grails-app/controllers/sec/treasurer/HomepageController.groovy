@@ -47,9 +47,9 @@ class HomepageController {
         redirect(uri:"/admin/user_list")
     }*/
 
-    def setEnable(String userName){
+    def setEnable(){
 
-      redirect(controller: 'user',action: 'setEnable',params:[usern: userName] )
+      redirect(controller: 'user',action: 'setEnable',params:[name:params.userName,email:params.email ] )
     }
 
 }
