@@ -36,7 +36,6 @@
                 <input value="Keywords" name = "keywords" >
                 <input value="ISBN" name = "isbn" >
                 <input value="Editorial" name = "Editorial" >
-                String editorial
 
             <fieldset class="form">
                 <input type="file" name="file" />
