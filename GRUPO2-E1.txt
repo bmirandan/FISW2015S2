@@ -5,18 +5,18 @@ Repositorio: https://github.com/bmirandan/FISW2015S2
 
 Trello:  https://trello.com/b/RmGQzLt1/proyecto-fisw
 
-Indicaciones:
-    Para agregar a un nuevo usuario primero se debe crear un rol.
-    Esta opcioón se encuentra en http://localhost:8080/ADSW al iniciar el proyecto
-    En este aparecen las opciones sign in, sign up, y crear rol.
+Indication:
+    To add a new user you should create a "rol" first
+    Witch is located in http://localhost:8080/ADSW as the project starts
+    There are three sign in, sign up, y crear rol.
     
     
     
-Miembros:
+Team:
     María José Astudillo Ñuñez         201273034-1
     José David Marroquín Toledo        201121070-0   
     Benjamín Miranda Narváez           201273057-0
     
-Nombre base de datos: newC
-Puerto base de datos: 3306
-admin: root, pass:1!2B3e.4
+BD name: newC
+BD port: 3306
+admin user: root, pass:1!2B3e.4
