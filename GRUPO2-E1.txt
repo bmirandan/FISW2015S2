@@ -1,6 +1,6 @@
 
 
-Repositorio: https://github.com/bmirandan/FISW2015S2
+Repository: https://github.com/bmirandan/FISW2015S2
              git@github.com:bmirandan/FISW2015S2.git
 
 Trello:  https://trello.com/b/RmGQzLt1/proyecto-fisw
